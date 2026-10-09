@@ -1,0 +1,20 @@
+{
+  "name": "prism-dash",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A neon synthwave endless runner for YouTube Playables, built with TypeScript, raw WebGL2 and Canvas 2D.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0218" />
+    <meta name="description" content="Prism Dash — a neon synthwave endless runner built with TypeScript, WebGL2 and Canvas 2D for YouTube Playables." />
+    <title>Prism Dash</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 30 16 16 30 2 16z' fill='%2321e6ff'/%3E%3C/svg%3E" />
+    <!-- YouTube Playables SDK: must load before the game code. Harmless outside YouTube. -->
+    <script src="https://www.youtube.com/game_api/v1"></script>
+  </head>
+  <body>
+    <main id="game">
+      <canvas id="scene-gl" aria-label="Game view"></canvas>
+      <canvas id="scene-2d" aria-label="Game view" hidden></canvas>
+      <canvas id="hud" aria-hidden="true"></canvas>
+
+      <button id="btn-pause" class="icon-btn" aria-label="Pause" hidden><span></span><span></span></button>
+
+      <section id="screen-title" class="screen">
+        <h1 class="logo"><span class="logo-a">PRISM</span><span class="logo-b">DASH</span></h1>
+        <p class="tagline" data-i18n="tagline"></p>
+        <p class="best-line"><span data-i18n="best"></span> <b id="title-best">0</b></p>
+        <div class="cta pulse" data-i18n="tapToStart"></div>
+        <p class="hint hint-desktop" data-i18n="controlsDesktop"></p>
+        <p class="hint hint-touch" data-i18n="controlsTouch"></p>
+        <div class="toolbar">
+          <button id="btn-sound" class="chip"></button>
+          <button id="btn-renderer" class="chip"></button>
+        </div>
+      </section>
+
+      <section id="screen-over" class="screen">
+        <div class="panel">
+          <h2 data-i18n="gameOver"></h2>
+          <div id="new-best" class="badge" data-i18n="newBest" hidden></div>
+          <div id="final-score" class="final-score">0</div>
+          <dl class="stats">
+            <div><dt data-i18n="best"></dt><dd id="over-best">0</dd></div>
+            <div><dt data-i18n="gems"></dt><dd id="over-gems">0</dd></div>
+            <div><dt data-i18n="maxCombo"></dt><dd id="over-combo">x0</dd></div>
+          </dl>
+          <button id="btn-retry" class="cta" data-i18n="retry"></button>
+        </div>
+      </section>
+
+      <section id="screen-pause" class="screen">
+        <div class="panel">
+          <h2 data-i18n="paused"></h2>
+          <button id="btn-resume" class="cta" data-i18n="resume"></button>
+        </div>
+      </section>
+
+      <div id="boot" class="boot">LOADING</div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
